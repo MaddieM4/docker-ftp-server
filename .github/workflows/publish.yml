@@ -24,7 +24,7 @@ jobs:
             ${{ github.repository_owner }}/ftp-server
             ghcr.io/${{ github.repository_owner }}/ftp-server
           tags: |
-            type=edge,branch=main
+            type=latest,branch=main
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
+          platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm/v8,linux/arm64,linux/ppc64le,linux/s390x
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
           labels: ${{ steps.prep.outputs.labels }}
