@@ -1,4 +1,4 @@
-docker_repository: garethflowers/ftp-server
+docker_repository: campadrenalin/ftp-server
 author: garethflowers
 plugins:
   - jekyll-remote-theme

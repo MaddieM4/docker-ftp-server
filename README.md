@@ -3,6 +3,8 @@
 A simple FTP server, using
 [`vsftpd`](https://security.appspot.com/vsftpd.html).
 
+(This is a fork of https://github.com/garethflowers/docker-ftp-server with a few patches incorporated - I've tried to swap my handle in the bare minimum places necessary for clear independent builds and pushes to Dockerhub until those patches can be upstreamed)
+
 ## How to use this image
 
 ### start a FTP Server instance
@@ -19,7 +21,7 @@ docker run \
 	--publish 20-21:20-21/tcp \
 	--publish 40000-40009:40000-40009/tcp \
 	--volume /data:/home/user \
-	garethflowers/ftp-server
+	campadrenalin/ftp-server
 ```
 
 ### ... via `docker compose`
@@ -31,7 +33,7 @@ services:
     environment:
       - FTP_PASS=123
       - FTP_USER=user
-    image: garethflowers/ftp-server
+    image: campadrenalin/ftp-server
     ports:
       - '20-21:20-21/tcp'
       - '40000-40009:40000-40009/tcp'
@@ -42,4 +44,4 @@ services:
 ## License
 
 -   This image is released under the
-    [MIT License](https://raw.githubusercontent.com/garethflowers/docker-ftp-server/master/LICENSE).
+    [MIT License](https://raw.githubusercontent.com/campadrenalin/docker-ftp-server/master/LICENSE).
